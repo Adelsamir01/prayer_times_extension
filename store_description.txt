@@ -1,0 +1,27 @@
+Canterbury Mosque Prayer Times is a beautiful and functional Chrome extension that helps you stay connected to your daily prayers. With a sleek, Apple-inspired design, it provides accurate prayer times from Canterbury Mosque and keeps you informed about upcoming prayer times.
+
+Key Features:
+- Accurate prayer times from Canterbury Mosque
+- Beautiful, modern interface with Apple-inspired design
+- Countdown to next prayer's Iqama time
+- Customizable notifications with mute options for each prayer
+- Azan sound notification 10 minutes before Iqama
+- Preview notification sound
+- Automatic daily updates
+- Clean, distraction-free interface
+
+The extension automatically fetches prayer times daily and stores them locally. You can customize which prayers you want to be notified about, and the extension will play the azan sound 10 minutes before each prayer's Iqama time (unless muted).
+
+Perfect for:
+- Muslims in Canterbury and surrounding areas
+- Anyone who wants to stay connected to prayer times
+- Users who prefer a clean, modern interface
+- Those who want customizable prayer notifications
+
+Privacy:
+- All data is stored locally on your device
+- No personal information is collected
+- Only fetches prayer times from canterburymosque.co.uk
+- Full privacy policy available in the extension
+
+Note: This extension is specifically for Canterbury Mosque prayer times. For other locations, please check with your local mosque. 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Offscreen Document</title>
+</head>
+<body>
+  <audio id="audio" src="azan.mp3"></audio>
+  <script>
+    // Listen for messages from the service worker
+    chrome.runtime.onMessage.addListener((message) => {
+      if (message.target === 'offscreen' && message.type === 'play-audio') {
+        const audio = document.getElementById('audio');
+        audio.volume = 1.0;
+
+        console.log('Offscreen document: playing audio');
+        
+        // Play the audio
+        audio.play().then(() => {
+          console.log('Audio playing successfully in offscreen document');
+        }).catch(error => {
+          console.error('Error playing audio in offscreen document:', error);
+        });
+        
+        // When audio finishes, notify the service worker and close the offscreen document
+        audio.addEventListener('ended', () => {
+          console.log('Audio playback completed in offscreen document');
+          chrome.runtime.sendMessage({ type: 'AUDIO_ENDED' });
+          // Give time for the message to be sent before closing
+          setTimeout(() => {
+            chrome.runtime.sendMessage({ type: 'close-offscreen' });
+          }, 100);
+        });
+      }
+    });
+    
+    console.log('Offscreen document loaded and ready');
+  </script>
+</body>
+</html> 

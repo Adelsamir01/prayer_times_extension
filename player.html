@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Azan Player</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f5f5f7;
+      color: #1d1d1f;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #ee6204;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    button {
+      background-color: #ee6204;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Azan Player</h1>
+    <p id="message">Azan is now playing...</p>
+    <audio id="azanAudio" src="azan.mp3" autoplay controls></audio>
+    <br>
+    <button id="closeButton">Close Window</button>
+  </div>
+
+  <script>
+    // Play the audio immediately
+    const audio = document.getElementById('azanAudio');
+    
+    // Make sure volume is up
+    audio.volume = 1.0;
+    
+    // Force play
+    audio.play().then(() => {
+      console.log('Azan playing successfully');
+    }).catch(error => {
+      console.error('Error playing azan:', error);
+      document.getElementById('message').textContent = 'Error playing azan. Please click play button.';
+    });
+    
+    // Close button
+    document.getElementById('closeButton').addEventListener('click', function() {
+      window.close();
+    });
+    
+    // Inform the background page when audio ends
+    audio.addEventListener('ended', function() {
+      chrome.runtime.sendMessage({ type: 'AUDIO_ENDED' });
+      // Close the window after 1 second
+      setTimeout(() => window.close(), 1000);
+    });
+  </script>
+</body>
+</html> 
