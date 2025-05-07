@@ -4,6 +4,8 @@ A Chrome extension that displays daily prayer times from Canterbury Mosque and p
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/moohpdemicfggnnaeenfndbcfhjnnnof?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/canterbury-mosque-prayer/moohpdemicfggnnaeenfndbcfhjnnnof)
 
+![Extension Screenshot](screenshot.png)
+
 ## Features
 
 - Displays daily prayer times from Canterbury Mosque
